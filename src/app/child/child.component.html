@@ -1,0 +1,18 @@
+<div class="childclass">
+    <form [formGroup]="childfrom">
+        <div>
+    <select (change)="selectedOption($event)" formControlName="dropdown">
+        <option value="Number">Number</option>
+        <option value="string">string</option>
+        <option value="Boolean">Boolean</option>
+        <option value="hexa decimal">hexa decimal</option>
+        <option value="Binary">Binary</option>    
+    </select>
+    <input class="childinput" [(ngModel)]="addedvalue" (input)="addtoValue()" type="text" formControlName="childinput">
+    </div>
+
+        <span  class="errormsg" *ngIf="!childinput.valid && childinput.touched"> please enter {{this.selectedtype}} </span> 
+       
+    
+    </form>
+   </div>

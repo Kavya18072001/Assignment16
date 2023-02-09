@@ -1,0 +1,56 @@
+<div class="form">
+    <h2>Registration Form</h2>
+   <form [formGroup]="registerForm" class="padding form-group"  (ngSubmit)="onsubmit()" > <!--connecting a FormGroup instance to a form in the HTML template. -->
+    <div class="bottomspace">
+        <span>Frist Name:</span>
+        <input class="block" type="text"  placeholder="enter the Fristname..." formControlName="firstname">
+        <span class="red"*ngIf="!registerForm.get('firstname').valid && registerForm.get('firstname').touched">{{validatefristname}}</span>
+    </div>
+    <div class="bottomspace">
+        <span>Last Name:</span>
+        <input class="block" type="text"placeholder="enter the Lastname..." formControlName="lastname">
+        <span class="red"*ngIf="!registerForm.get('lastname').valid && registerForm.get('lastname').touched">{{validatelastname}}</span>
+    </div>
+    <div class="bottomspace">
+        <span>Age:</span>
+        <input class="block" type="text"placeholder="enter the age..." formControlName="age">
+        <span class="red"*ngIf="!registerForm.get('age').valid && registerForm.get('age').touched">{{validateage}}</span>
+    </div>
+    <div class="bottomspace">
+        <span>User Name:</span>
+        <input class="block" type="text" placeholder="enter the User name..."formControlName="Username">
+               
+          <span class="red"*ngIf="!registerForm.get('Username').valid && registerForm.get('Username').touched">{{validateusername}}</span>
+ 
+    </div>
+    <div class="bottomspace">
+        <span>Email:</span>
+        <input  class="block" type="text" placeholder="kavya@gmail.com" formControlName="email">
+        <span class="red"*ngIf="!registerForm.get('email').valid && registerForm.get('email').touched">{{validateemail}}</span>
+ 
+    </div>
+    <div class="bottomspace">
+        <span>Phone Number:</span>
+        <input  class="block" type="text" placeholder="enter the phone number..." formControlName="phnno"> 
+        <span class="red"*ngIf="!registerForm.get('phnno').valid && registerForm.get('phnno').touched">{{validatephnno}}</span>
+ 
+    </div>
+    <div class="bottomspace">
+        <span>Additional Data:</span>
+        <input  class="block" (input)="addtolabel($event)"type="text" formControlName="additionaldata">
+    </div>
+     <app-child (inputchild)="toaddvalue($event)"></app-child><br>   
+        <div class="bottomspace" >
+            <span>Add Label:{{labeldata}}</span>  
+        </div>
+        <div class="bottomspace" >
+            <span>Add value:{{addtoparent}}</span>
+        </div>
+   
+    <div class="leftmargin">
+    <button class="btn" type="submit" (click)="onsubmit" >Submit</button> 
+    <button class="btn reset" type="reset" >Reset</button>
+    </div>
+   </form>
+</div>
+<router-outlet></router-outlet>

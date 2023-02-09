@@ -1,0 +1,26 @@
+.childclass{
+    border: 1px solid;
+    width: 340px;
+    padding: 29px 0px;
+    text-align: center;
+    background-color: rgb(166, 169, 169);
+    border-radius: 5px;
+    margin-left: 18px;
+    
+}
+.childinput{
+    border-radius: 5px;
+    height: 25px;
+  
+}
+select{
+    height: 34px; 
+    border-radius: 5px;
+    margin-right: 20px;
+}
+.errormsg{
+  padding-top: 10px;
+  margin-left: 0px; 
+  color: red;  
+}
+
